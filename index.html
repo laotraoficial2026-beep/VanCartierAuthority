@@ -1,257 +1,145 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Van Cartier Authority</title>
+    <meta name="google" content="notranslate">
+    <title>Van Cartier Authority | Strategic Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --cyan: #00E5FF;
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 229, 255, 0.15);
         }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #000000;
-            background-image: 
-                linear-gradient(0deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 229, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            color: #f0f0f0;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-
-        header {
-            padding: 80px 40px;
+        /* Animación de Entrada */
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            border-bottom: 2px solid rgba(0, 229, 255, 0.2);
-            position: relative;
-            z-index: 1;
+            background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.05));
+            border-bottom: 1px solid var(--border);
         }
-
         h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 8px;
-            color: #00E5FF;
-            text-shadow: 
-                0 0 10px #00E5FF,
-                0 0 20px #00E5FF,
-                0 0 30px #00E5FF,
-                0 0 40px #0099cc;
+            font-size: clamp(1.8rem, 10vw, 3.5rem);
+            letter-spacing: 12px;
+            color: var(--cyan);
+            text-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+            font-weight: 600;
             margin-bottom: 10px;
-            animation: glow-pulse 3s ease-in-out infinite;
         }
-
-        @keyframes glow-pulse {
-            0%, 100% {
-                text-shadow: 
-                    0 0 10px #00E5FF,
-                    0 0 20px #00E5FF,
-                    0 0 30px #00E5FF,
-                    0 0 40px #0099cc;
-            }
-            50% {
-                text-shadow: 
-                    0 0 20px #00E5FF,
-                    0 0 40px #00E5FF,
-                    0 0 60px #00E5FF,
-                    0 0 80px #0099cc;
-            }
-        }
-
         .subtitle {
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            color: #999;
+            font-size: 0.7rem;
+            letter-spacing: 6px;
+            color: #666;
             text-transform: uppercase;
         }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
+        .container {
+            max-width: 850px;
+            margin: -60px auto 0;
+            padding: 0 20px 100px;
         }
-
-        section {
-            margin-bottom: 80px;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            color: #00E5FF;
-            font-family: 'Georgia', 'Garamond', serif;
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 45px;
             margin-bottom: 30px;
-            border-left: 4px solid #00E5FF;
-            padding-left: 20px;
-            letter-spacing: 3px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            animation: reveal 1.2s ease-out forwards;
         }
-
-        .manifiesto {
-            background-color: rgba(0, 229, 255, 0.02);
-            border: 1px solid rgba(0, 229, 255, 0.15);
-            padding: 40px;
-            border-radius: 2px;
-        }
-
-        .manifiesto p {
-            font-family: 'Georgia', 'Garamond', serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d0d0d0;
+        .serif {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: #fff;
             margin-bottom: 20px;
+        }
+        .accent-bar {
+            width: 40px;
+            height: 3px;
+            background: var(--cyan);
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+        .protocol-text {
+            font-size: 0.95rem;
+            color: #aaa;
+            line-height: 1.8;
             text-align: justify;
         }
-
-        .manifiesto p:last-child {
-            margin-bottom: 0;
-        }
-
-        .terminal-enlace {
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00E5FF;
-            padding: 40px;
-            border-radius: 2px;
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
-        }
-
-        .terminal-enlace h3 {
-            font-size: 1.5rem;
-            color: #00E5FF;
-            margin-bottom: 25px;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 2px;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 1rem;
-        }
-
-        .contact-label {
-            color: #00E5FF;
-            margin-right: 15px;
-            min-width: 80px;
-            text-transform: uppercase;
-        }
-
-        .contact-value {
-            color: #e0e0e0;
-            word-break: break-all;
-        }
-
-        .contact-value a {
-            color: #00E5FF;
+        .btn-contact {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
             text-decoration: none;
-            border-bottom: 1px dashed #00E5FF;
-            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            transition: all 0.4s;
         }
-
-        .contact-value a:hover {
-            text-shadow: 0 0 10px #00E5FF;
-            border-bottom-style: solid;
+        .btn-contact:hover {
+            background: var(--cyan);
+            color: #000;
+            box-shadow: 0 0 20px var(--cyan);
         }
-
         footer {
             text-align: center;
             padding: 40px;
-            border-top: 2px solid rgba(0, 229, 255, 0.2);
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 100px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: 4px;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-
-            header {
-                padding: 50px 20px;
-            }
-
-            main {
-                padding: 40px 20px;
-            }
-
-            .manifiesto,
-            .terminal-enlace {
-                padding: 25px;
-            }
-
-            .contact-method {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .contact-label {
-                margin-right: 0;
-                margin-bottom: 8px;
-            }
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>VAN CARTIER AUTHORITY</h1>
-        <p class="subtitle">Strategic Systems Architecture & Consulting</p>
-    </header>
+    <section class="hero">
+        <h1>VAN CARTIER</h1>
+        <p class="subtitle">Strategic Authority & Intelligence</p>
+    </section>
 
-    <main>
-        <section>
-            <h2>Manifiesto</h2>
-            <div class="manifiesto">
-                <p>
-                    Operamos bajo principios de honestidad técnica absoluta. No existe rodeo en nuestro análisis de sistemas, infraestructura o modelos de decisión. Cada recomendación está fundamentada en evidencia arquitectónica verificable, no en narrativas comerciales.
-                </p>
-                <p>
-                    La precisión es el estándar mínimo. Identificamos vulnerabilidades, ineficiencias y puntos de fallo con transparencia radical. Nuestro compromiso es con la excelencia técnica y la escalabilidad de largo plazo, no con soluciones superficiales.
-                </p>
-                <p>
-                    Blindaje corporativo absoluto. Protegemos la privacidad de nuestros clientes mediante terminología genérica en toda documentación pública. Nuestras opiniones sobre entidades bajo auditoría permanecen clasificadas internamente.
-                </p>
-            </div>
-        </section>
+    <div class="container">
+        <div class="glass-card">
+            <div class="accent-bar"></div>
+            <p class="serif">"La honestidad técnica es el único blindaje ante la ineficiencia sistémica."</p>
+            <p class="protocol-text">
+                Operamos bajo principios de precisión absoluta. Cada análisis de arquitectura corporativa está fundamentado en evidencia verificable. No gestionamos expectativas comerciales; entregamos soluciones estructurales.
+            </p>
+        </div>
 
-        <section>
-            <h2>Terminal de Enlace</h2>
-            <div class="terminal-enlace">
-                <h3>Contacto Directo</h3>
-                <div class="contact-method">
-                    <span class="contact-label">Email:</span>
-                    <span class="contact-value"><a href="mailto:vancartierauthority@proton.me">vancartierauthority@proton.me</a></span>
-                </div>
-                <div class="contact-method">
-                    <span class="contact-label">Protocolo:</span>
-                    <span class="contact-value">PGP Encrypted Communication Preferred</span>
-                </div>
-                <div class="contact-method">
-                    <span class="contact-label">Disponibilidad:</span>
-                    <span class="contact-value">Respuesta en 48 horas máximo</span>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="glass-card" style="animation-delay: 0.3s;">
+            <p style="color: var(--cyan); font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 15px;">DOSSIER 01</p>
+            <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Arquitectura del Silencio</h2>
+            <p class="protocol-text">
+                Estrategias de deslinde y optimización en ecosistemas hostiles. Definición de soberanía de datos y protección de activos intelectuales frente a narrativas externas.
+            </p>
+            <a href="mailto:vancartierauthority@proton.me" class="btn-contact">SOLICITAR AUDITORÍA</a>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Van Cartier Authority. Todos los derechos reservados.</p>
-        <p>Infraestructura técnica optimizada. Contenido propietario del cliente.</p>
-    </footer>
+        <footer>
+            © 2026 VAN CARTIER AUTHORITY. <br>
+            INFRAESTRUCTURA TÉCNICA CIFRADA. PROPIEDAD DEL CLIENTE.
+        </footer>
+    </div>
 </body>
 </html>
-```
-  
