@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Cartier Authority</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            background-image: 
+                linear-gradient(0deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 2px solid rgba(0, 229, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #00E5FF;
+            text-shadow: 
+                0 0 10px #00E5FF,
+                0 0 20px #00E5FF,
+                0 0 30px #00E5FF,
+                0 0 40px #0099cc;
+            margin-bottom: 10px;
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                text-shadow: 
+                    0 0 10px #00E5FF,
+                    0 0 20px #00E5FF,
+                    0 0 30px #00E5FF,
+                    0 0 40px #0099cc;
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px #00E5FF,
+                    0 0 40px #00E5FF,
+                    0 0 60px #00E5FF,
+                    0 0 80px #0099cc;
+            }
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #00E5FF;
+            font-family: 'Georgia', 'Garamond', serif;
+            margin-bottom: 30px;
+            border-left: 4px solid #00E5FF;
+            padding-left: 20px;
+            letter-spacing: 3px;
+        }
+
+        .manifiesto {
+            background-color: rgba(0, 229, 255, 0.02);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            padding: 40px;
+            border-radius: 2px;
+        }
+
+        .manifiesto p {
+            font-family: 'Georgia', 'Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .manifiesto p:last-child {
+            margin-bottom: 0;
+        }
+
+        .terminal-enlace {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00E5FF;
+            padding: 40px;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+        }
+
+        .terminal-enlace h3 {
+            font-size: 1.5rem;
+            color: #00E5FF;
+            margin-bottom: 25px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+        }
+
+        .contact-label {
+            color: #00E5FF;
+            margin-right: 15px;
+            min-width: 80px;
+            text-transform: uppercase;
+        }
+
+        .contact-value {
+            color: #e0e0e0;
+            word-break: break-all;
+        }
+
+        .contact-value a {
+            color: #00E5FF;
+            text-decoration: none;
+            border-bottom: 1px dashed #00E5FF;
+            transition: all 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            text-shadow: 0 0 10px #00E5FF;
+            border-bottom-style: solid;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 2px solid rgba(0, 229, 255, 0.2);
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 100px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            header {
+                padding: 50px 20px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .manifiesto,
+            .terminal-enlace {
+                padding: 25px;
+            }
+
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-label {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VAN CARTIER AUTHORITY</h1>
+        <p class="subtitle">Strategic Systems Architecture & Consulting</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Manifiesto</h2>
+            <div class="manifiesto">
+                <p>
+                    Operamos bajo principios de honestidad técnica absoluta. No existe rodeo en nuestro análisis de sistemas, infraestructura o modelos de decisión. Cada recomendación está fundamentada en evidencia arquitectónica verificable, no en narrativas comerciales.
+                </p>
+                <p>
+                    La precisión es el estándar mínimo. Identificamos vulnerabilidades, ineficiencias y puntos de fallo con transparencia radical. Nuestro compromiso es con la excelencia técnica y la escalabilidad de largo plazo, no con soluciones superficiales.
+                </p>
+                <p>
+                    Blindaje corporativo absoluto. Protegemos la privacidad de nuestros clientes mediante terminología genérica en toda documentación pública. Nuestras opiniones sobre entidades bajo auditoría permanecen clasificadas internamente.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Terminal de Enlace</h2>
+            <div class="terminal-enlace">
+                <h3>Contacto Directo</h3>
+                <div class="contact-method">
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value"><a href="mailto:vancartierauthority@proton.me">vancartierauthority@proton.me</a></span>
+                </div>
+                <div class="contact-method">
+                    <span class="contact-label">Protocolo:</span>
+                    <span class="contact-value">PGP Encrypted Communication Preferred</span>
+                </div>
+                <div class="contact-method">
+                    <span class="contact-label">Disponibilidad:</span>
+                    <span class="contact-value">Respuesta en 48 horas máximo</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Van Cartier Authority. Todos los derechos reservados.</p>
+        <p>Infraestructura técnica optimizada. Contenido propietario del cliente.</p>
+    </footer>
+</body>
+</html>
+```
+  
