@@ -3,90 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vladimir Van Cartier | Digital Presence</title>
+    <title>Vladimir Van Cartier | Authority</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --dark: #0a0a0a; --gray: #1a1a1a; --text: #e0e0e0; --accent: #ffffff; }
+        :root { --gold: #c5a059; --dark: #0a0a0a; --gray: #1a1a1a; --text: #e0e0e0; }
         body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
-        
-        /* Background Video Container */
-        .video-background {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            filter: brightness(35%) contrast(110%);
-        }
-
-        .header-content { z-index: 1; padding: 0 20px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .subtitle { font-size: 1rem; text-transform: uppercase; letter-spacing: 8px; margin-bottom: 10px; color: var(--accent); opacity: 0.8; }
-        
-        /* Navigation Buttons */
-        .nav-container { margin-top: 40px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .btn {
-            padding: 12px 30px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: all 0.4s ease;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-        .btn:hover { background: var(--gold); color: var(--dark); box-shadow: 0 0 20px rgba(197, 160, 89, 0.4); }
-
-        /* Main Content */
+        .video-background { position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
+        video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -1; filter: brightness(35%) contrast(110%); }
+        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); margin: 0; letter-spacing: 2px; }
+        .subtitle { font-size: 1rem; text-transform: uppercase; letter-spacing: 8px; margin-bottom: 15px; color: #fff; opacity: 0.8; }
+        .nav-container { margin-top: 40px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn { padding: 12px 25px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; transition: 0.4s; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .btn:hover { background: var(--gold); color: var(--dark); }
+        .btn-hl { border-color: #fff; color: #fff; }
         .content-section { padding: 80px 20px; max-width: 900px; margin: auto; line-height: 1.8; }
-        .manifiesto { border-left: 2px solid var(--gold); padding-left: 40px; margin: 60px 0; }
-        .manifiesto h2 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 25px; }
-        
-        .folio-box { 
-            background: #111; 
-            padding: 30px; 
-            border: 1px solid #333; 
-            font-family: monospace; 
-            font-size: 0.85rem; 
-            margin-top: 50px; 
-            color: #888;
-            display: inline-block;
-        }
-
-        /* Legal Footer */
-        footer { background: #000; padding: 80px 20px; font-size: 0.75rem; color: #666; border-top: 1px solid #1a1a1a; }
-        .legal-grid { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .legal-text h3 { color: #999; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px; }
-        .highlight { color: var(--gold); font-weight: bold; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .legal-grid { grid-template-columns: 1fr; }
-            .nav-container { flex-direction: column; width: 100%; align-items: center; }
-            .btn { width: 80%; text-align: center; }
-        }
+        footer { background: #000; padding: 60px 20px; font-size: 0.75rem; color: #666; border-top: 1px solid #1a1a1a; text-align: center; }
     </style>
 </head>
 <body>
-
 <div class="video-background">
-    <video autoplay muted loop playsinline poster="preview.jpg">
-        <source src="./nombre-de-tu-video.
+    <video autoplay muted loop playsinline><source src="./vancartier_video.mp4" type="video/mp4"></video>
+    <div style="z-index:1;">
+        <div class="subtitle">Personal Presence Portfolio</div>
+        <h1>VLADIMIR VAN CARTIER</h1>
+        <div class="nav-container">
+            <a href="./manifiesto.html" class="btn">Manifiesto</a>
+            <a href="./proyectos.html" class="btn">Proyectos</a>
+            <a href="./dossier-01.html" class="btn btn-hl">Dossier 01</a>
+            <a href="./contacto.html" class="btn">Solicitud Directa</a>
+        </div>
+    </div>
+</div>
+<section class="content-section">
+    <h2 style="color:var(--gold); font-family:'Playfair Display';">ARQUITECTURA DE IDENTIDAD</h2>
+    <p>Desarrollo de presencias digitales basadas en ingeniería de sistemas y convergencia estratégica. No operamos bajo modelos de consultoría tradicional; construimos autoridad.</p>
+</section>
+<footer>© 2026 Vladimir Van Cartier | ID-AD: VVC-2026-001X</footer>
+</body>
+</html>
