@@ -1,38 +1,28 @@
-.btn-hl { border-width: 2px; box-shadow: 0 0 15px var(--neon-green); }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vladimir Van Cartier | Root Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-green: #0f0; --dark-bg: #000; --terminal-gray: #1a1a1a; --alert-red: #f00; }
+        body { background: var(--dark-bg); color: var(--neon-green); font-family: 'Courier Prime', monospace; margin: 0; overflow-x: hidden; text-shadow: 0 0 5px rgba(0, 255, 0, 0.7); }
         
-        /* Nuevo estilo para el botón de Prompt Engineering */
-        .btn-prompt { 
-            border: 2px solid #fff; 
-            color: #fff; 
-            background: rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-prompt:hover { 
-            background: #fff; 
-            color: #000; 
-            box-shadow: 0 0 25px #fff; 
-        }
-        .btn-prompt::after {
-            content: " [SECURE_ACCESS]";
-            font-size: 0.6rem;
-            vertical-align: middle;
-        }
-    </style>
-</head>
-<body>
-<div class="video-header">
-    <video autoplay muted loop playsinline><source src="./vancartier_video.mp4" type="video/mp4"></video>
-    <div class="grid-overlay"></div>
-    <div style="z-index:1;">
-        <div class="subtitle">> INIT_IDENTITY_CORE_V.2.0</div>
-        <h1>VLADIMIR VAN CARTIER</h1>
-        <div class="nav-container">
-            <a href="./manifiesto.html" class="btn">Manifiesto</a>
-            <a href="./proyectos.html" class="btn">Proyectos</a>
-            <a href="./dossier-01.html" class="btn btn-hl">Dossier 01</a>
-            <a href="./prompt-engineering.html" class="btn btn-prompt">Prompt Engineering</a>
-            <a href="./contacto.html" class="btn">Contacto</a>
-        </div>
-    </div>
-</div>
+        /* Header con Video y Malla */
+        .video-header { position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; border-bottom: 2px solid var(--neon-green); }
+        video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -2; filter: brightness(20%) grayscale(100%); }
+        .grid-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 0, .05) 25%, rgba(0, 255, 0, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, .05) 75%, rgba(0, 255, 0, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 0, .05) 25%, rgba(0, 255, 0, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, .05) 75%, rgba(0, 255, 0, .05) 76%, transparent 77%, transparent); background-size: 50px 50px; z-index: -1; }
+
+        h1 { font-size: 3.5rem; margin: 0; letter-spacing: -2px; text-transform: uppercase; }
+        .subtitle { font-size: 1rem; text-transform: uppercase; letter-spacing: 5px; color: #fff; opacity: 0.8; margin-bottom: 20px; }
+        
+        /* Botones Terminal */
+        .nav-container { margin-top: 50px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; z-index: 1; }
+        .btn { padding: 10px 20px; border: 1px solid var(--neon-green); color: var(--neon-green); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; background: rgba(0, 0, 0, 0.7); transition: 0.3s; box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); }
+        .btn:hover { background: var(--neon-green); color: var(--dark-bg); box-shadow: 0 0 20px var(--neon-green); }
+        .btn-hl { border-width: 2px; box-shadow: 0 0 15px var(--neon-green); }
+
+        /* Estética Vanguardista para el nuevo botón */
+        .btn-vanguard { border: 1px solid #fff; color: #fff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); position: relative; }
+        .btn-vanguard:hover { background: #fff; color: #000; box-shadow: 0 0 25px #fff;
