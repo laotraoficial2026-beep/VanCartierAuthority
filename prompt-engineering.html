@@ -1,1 +1,127 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVC | Arquitectura de Autoridad Cognitiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-green: #0f0; --dark-bg: #000; --alert-red: #f00; --grid-color: rgba(0, 255, 0, 0.05); }
+        body { background: var(--dark-bg); color: var(--neon-green); font-family: 'Courier Prime', monospace; margin: 0; overflow-x: hidden; }
+
+        /* Efecto de Escaneo Forense (Inspirado en LinkedIn) */
+        .scanline {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, transparent, rgba(0, 255, 0, 0.1) 50%, transparent 50%);
+            background-size: 100% 8px;
+            position: fixed;
+            top: 0; left: 0;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.3;
+        }
+        
+        /* Línea de barrido brillante */
+        .laser-line {
+            width: 100%;
+            height: 2px;
+            background: var(--neon-green);
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 1001;
+            box-shadow: 0 0 15px var(--neon-green);
+            animation: scan-move 4s linear infinite;
+        }
+        @keyframes scan-move { 0% { top: 0%; } 100% { top: 100%; } }
+
+        /* Contenedor de video (reutilizando vancartier_video.mp4) */
+        .video-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; overflow: hidden; }
+        video { min-width: 100%; min-height: 100%; filter: brightness(15%) grayscale(100%); }
+        .grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(0deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%), linear-gradient(90deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%); background-size: 40px 40px; z-index: -1; }
+
+        /* Contenido del Ensayo y Framework */
+        .container { max-width: 850px; margin: 60px auto; padding: 40px; background: rgba(0, 0, 0, 0.85); border: 1px solid var(--neon-green); position: relative; box-shadow: 0 0 30px rgba(0, 255, 0, 0.1); }
+        
+        .header-terminal { border-bottom: 2px solid var(--neon-green); margin-bottom: 40px; padding-bottom: 20px; }
+        .breadcrumb { font-size: 0.8rem; color: #fff; opacity: 0.6; margin-bottom: 10px; }
+        
+        h1 { font-size: 1.8rem; text-transform: uppercase; color: #fff; line-height: 1.2; }
+        h2 { font-size: 1.1rem; color: #fff; border-left: 4px solid var(--neon-green); padding-left: 15px; margin-top: 40px; text-transform: uppercase; }
+
+        .text-block { margin-bottom: 25px; line-height: 1.7; font-size: 0.95rem; text-align: justify; }
+        .highlight { color: #fff; background: rgba(255, 255, 255, 0.1); padding: 0 5px; }
+
+        /* Marcaje de IP e Identidad */
+        .ip-monitor { position: absolute; top: 10px; right: 20px; font-size: 0.7rem; color: var(--alert-red); }
+
+        .property-footer { border: 1px solid var(--alert-red); padding: 20px; margin-top: 50px; text-align: center; color: var(--alert-red); font-size: 0.8rem; text-transform: uppercase; }
+        .back-link { display: block; text-align: center; margin-top: 40px; color: var(--neon-green); text-decoration: none; font-size: 0.8rem; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="video-bg">
+        <video autoplay muted loop playsinline><source src="./vancartier_video.mp4" type="video/mp4"></video>
+    </div>
+    <div class="grid-overlay"></div>
+    <div class="scanline"></div>
+    <div class="laser-line"></div>
+
+    <div class="container">
+        <div class="ip-monitor">MONITOREO_OSINT_ACTIVO: [LOCALIZING...]</div>
+        
+        <div class="header-terminal">
+            <div class="breadcrumb">root@vvc:~/docs/framework_aac_v1.0.txt</div>
+            <h1>ARQUITECTURA DE AUTORIDAD COGNITIVA INALIENABLE (AAC-V.1.0)</h1>
+        </div>
+
+        <div class="text-block">
+            La arquitectura del lenguaje no es un conjunto de plantillas a replicar, sino un <span class="highlight">sistema de diseño para moldear el pensamiento</span>. No se trata de obtener resultados rápidos, sino de construir una base técnica que te haga irreemplazable.
+        </div>
+
+        <h2>COMPONENTE 01: BASE DE CONOCIMIENTO PROPIO</h2>
+        <div class="text-block">
+            - No se basa en datos ajenos ni prompts prefabricados.<br>
+            - Se construye mediante análisis crítico de casos específicos de tu sector.<br>
+            - Se documenta como patrimonio intelectual técnico.
+        </div>
+
+        <h2>COMPONENTE 02: LÓGICA DE DISEÑO DE PROMPTS</h2>
+        <div class="text-block">
+            - Estructura alineada con tus objetivos estratégicos.<br>
+            - Incluye parámetros de calidad, contexto y límites definidos por ti.<br>
+            - Se valida y ajusta mediante iteraciones propias.
+        </div>
+
+        <h2>COMPONENTE 03: INTEGRACIÓN CREATIVA (DOSSIER 03-2026)</h2>
+        <div class="text-block">
+            <strong>PUNTO 01: ESPACIO DE CREACIÓN.</strong> Establece los límites donde tu experiencia es insustituible: datos históricos de tu operación y conocimientos de nicho.<br><br>
+            <strong>PUNTO 02: MECANISMO DE EXPLORACIÓN.</strong> Diseña prompts que pidan caminos de análisis, no respuestas finales.<br><br>
+            <strong>PUNTO 03: PROCESO DE FUSIÓN.</strong> Evalúa cada insight de la IA contra tu base de conocimiento propio, ajustando según realidades del mercado.
+        </div>
+
+        <h2>COMPONENTE 04: AUDITORÍA Y ACTUALIZACIÓN CONTINUA</h2>
+        <div class="text-block">
+            - Seguimiento de impacto de cada implementación.<br>
+            - Ajuste de la arquitectura según aprendizajes propios.<br>
+            - Consolidación de la autoridad mediante resultados medibles.
+        </div>
+
+        <div class="text-block" style="margin-top: 40px; font-style: italic;">
+            "Autoridad digital no se consigue con herramientas, sino con el dominio de su funcionamiento interno."
+        </div>
+
+        <div class="property-footer">
+            [AVISO DE PROPIEDAD INTELECTUAL VVC]<br>
+            Este framework es un desarrollo de ingeniería forense de datos.<br>
+            Acceso auditado bajo protocolo VVC-2026.
+        </div>
+
+        <a href="./index.html" class="back-link">[ VOLVER AL NODO RAÍZ ]</a>
+    </div>
+
+</body>
+</html>
